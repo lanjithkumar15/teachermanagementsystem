@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filtered Teachers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        form label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        form input {
+            padding: 8px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        form button {
+            padding: 8px 20px;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Filtered Teachers</h1>
+    <form method="POST" action="{% url 'filter_teachers' %}">
+        {% csrf_token %}
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age">
+        <label for="numberofclass">Number of Classes:</label>
+        <input type="number" id="numberofclass" name="numberofclass">
+        <button type="submit">Filter</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Date of Birth</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Designation</th>
+                <th>Salary</th>
+                <th>Number of Classes</th>
+                <th>Experience</th>
+                <th>Work</th>
+                <th>Class Taking</th>
+                <th>Major</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+            <tr>
+                <td>{{ teacher.employee_id}}</td>
+                <td>{{ teacher.date_of_birth}}</td>
+                <td>{{ teacher.name }}</td>
+                <td>{{ teacher.age }}</td>
+                <td>{{ teacher.designation }}</td>
+                <td>{{ teacher.salary }}</td>
+                <td>{{ teacher.Numberofclasses }}</td>
+                <td>{{ teacher.experience }}</td>
+                <td>{{ teacher.work }}</td>
+                <td>{{ teacher.classtaking }}</td>
+                <td>{{ teacher.major }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

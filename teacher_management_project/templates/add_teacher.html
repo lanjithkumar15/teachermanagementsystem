@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Teacher</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Add Teacher</h2>
+        <form method="post" action="{% url 'add_teacher' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="date_of_birth">Date of Birth:</label>
+                <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="designation">Designation:</label>
+                <input type="text" class="form-control" id="designation" name="designation" required>
+            </div>
+            <div class="form-group">
+                <label for="salary">Salary:</label>
+                <input type="number" class="form-control" id="salary" name="salary" required>
+            </div>
+            <div class="form-group">
+                <label for="Numberofclasses">Number of Classes:</label>
+                <input type="number" class="form-control" id="Numberofclasses" name="Numberofclasses" required>
+            </div>
+            <div class="form-group">
+                <label for="experience">Experience:</label>
+                <input type="text" class="form-control" id="experience" name="experience" required>
+            </div>
+            <div class="form-group">
+                <label for="work">Work:</label>
+                <select class="form-control" id="work" name="work" required>
+                    <option value="Class Handling">Class Handling</option>
+                    <option value="Lab Supervision">Lab Supervision</option>
+                    <option value="Extracurricular Activities">Extracurricular Activities</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="classtaking">Class Taking:</label>
+                <select class="form-control" id="classtaking" name="classtaking" required>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Science">Science</option>
+                    <option value="English">English</option>
+                    <option value="History">History</option>
+                    <option value="Geography">Geography</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="major">Major:</label>
+                <select class="form-control" id="major" name="major" required>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Biology">Biology</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="English">English</option>
+                    <option value="History">History</option>
+                    <option value="Geography">Geography</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Add Teacher</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

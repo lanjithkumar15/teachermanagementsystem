@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Teacher</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form {
+            width: 50%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        p.error {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Update Teacher</h1>
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+    <form method="POST" action="update_teacher">
+        {% csrf_token %}
+        <label for="employee_id">Employee ID:</label>
+        <input type="text" id="employee_id" name="employee_id" required>
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        
+        <label for="dob">Date of Birth:</label>
+        <input type="text" id="dob" name="dob">
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age">
+        
+        <label for="designation">Designation:</label>
+        <input type="text" id="designation" name="designation">
+        
+        <label for="salary">Salary:</label>
+        <input type="text" id="salary" name="salary">
+
+        <label for="noofclasses">Number of Classes:</label>
+        <input type="text" id="noofclasses" name="noofclasses">
+        
+        <label for="experience">Experience:</label>
+        <input type="number" id="experience" name="experience">
+        
+        <label for="work">Work:</label>
+        <select id="work" name="work">
+            <option value="Class Handling">Class Handling</option>
+            <option value="Lab Supervision">Lab Supervision</option>
+            <option value="Extracurricular Activities">Extracurricular Activities</option>
+        </select>
+        
+        <label for="classtaking">Class Taking:</label>
+        <select id="classtaking" name="classtaking">
+            <option value="Mathematics">Mathematics</option>
+            <option value="Science">Science</option>
+            <option value="English">English</option>
+            <option value="History">History</option>
+            <option value="Geography">Geography</option>
+            <option value="Physics">Physics</option>
+            <option value="Chemistry">Chemistry</option>
+        </select>
+        
+        <label for="major">Major:</label>
+        <select id="major" name="major">
+            <option value="Physics">Physics</option>
+            <option value="Chemistry">Chemistry</option>
+            <option value="Biology">Biology</option>
+            <option value="Mathematics">Mathematics</option>
+            <option value="English">English</option>
+            <option value="History">History</option>
+            <option value="Geography">Geography</option>
+        </select>
+        
+        <input type="submit" value="Update Teacher">
+    </form>
+</body>
+</html>
