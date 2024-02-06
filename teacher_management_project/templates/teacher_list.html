@@ -3,47 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher List</title>
+    <center><h1>Teachers List</h1></center>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+    body {
+    font-family: Arial, sans-serif;
+    background-image: url(https://img.freepik.com/free-vector/hand-drawn-back-school-background_23-2149464866.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
+    margin: 0;
+    padding: 0;
+}
 
-        h2 {
-            text-align: center;
-            margin-top: 20px;
-        }
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: #ffffff; 
+}
 
-        table {
-            width: 80%;
-            margin: 20px auto;
-            border-collapse: collapse;
-        }
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 10px; 
+}
 
-        th, td {
-            padding: 8px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
 
-        th {
-            background-color: #f2f2f2;
-        }
+th {
+    background-color: #f2f2f2;
+    color: #333; 
+}
 
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
 
-        tr:hover {
-            background-color: #ddd;
-        }
+tr:hover {
+    background-color: #ddd;
+}
+
     </style>
 </head>
 <body>
-    <h2>Teacher List</h2>
     <p style="text-align: center; color: blue;">Average Number of Classes Taken: {{ average_classes }}</p>
     <table>
         <thead>

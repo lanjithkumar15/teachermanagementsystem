@@ -2,36 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teacher Management Application</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://wallpapers.com/images/high/teacher-background-dcx5qeklgz3gsx41.webp');
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: rgb(27, 26, 26);
+        }
+
         ul {
             list-style-type: none;
             padding: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Display three columns */
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
         }
 
         li {
-            display: grid;
-            place-items: center;
-            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         a {
             text-decoration: none;
-            color: white;
-            background-color: #4CAF50;
-            padding: 10px 20px;
-            border-radius: 5px;
+            color: rgb(7, 7, 7);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
             transition: background-color 0.3s ease;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+            display: block; 
         }
 
         a:hover {
-            background-color: #45a049; 
+            background-color: rgba(94, 211, 71, 0.596); 
         }
     </style>
 </head>
 <body>
-    <center><h1>Welcome to Teacher Management Application</h1></center>
-    <h2 style="text-align: center;">Options Avilable</h2>
+    <h1>Welcome to Teacher Management Application</h1>
+    <h2>Options Available</h2>
     <ul>
         <li><a href="{% url 'show_all_teachers' %}">Show all teachers</a></li>
         <li><a href="{% url 'add_teacher' %}">Add a teacher</a></li>
@@ -39,7 +63,7 @@
         <li><a href="{% url 'search_teacher' %}">Search for a teacher</a></li>
         <li><a href="{% url 'update_teacher' %}">Update a teacher's record</a></li>
         <li><a href="{% url 'delete_record' %}">Delete a teacher</a></li>
-        <li><a href="{% url 'Bonustask' %}"> Bonus Task</a></li>
+        <li><a href="{% url 'Bonustask' %}">Bonus Task</a></li>
     </ul>
 </body>
 </html>
